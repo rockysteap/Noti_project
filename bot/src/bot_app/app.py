@@ -1,4 +1,5 @@
 from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
 
 from .config import Settings
 
@@ -9,7 +10,7 @@ from src.bot_app.cache.redis_cache import cache_storage
 
 
 async def bot_main():
-    bot = Bot(token=Settings.BOT_TOKEN)
+    bot = Bot(token=Settings.BOT_TOKEN, parse_mode=ParseMode.HTML)
     dp = Dispatcher(storage=cache_storage)
     dp.include_router(main_router)
 
