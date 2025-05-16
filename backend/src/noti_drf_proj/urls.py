@@ -22,15 +22,15 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from noti.views import NotiView
+from noti.views import NotiOwnerView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # JWT
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     # Bot API
-    path('api/v1/test', NotiView.as_view(), name='home'),
+    path('api/v1/noti_owner/', NotiOwnerView.as_view(), name='home'),
 ]

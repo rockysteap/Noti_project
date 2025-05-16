@@ -5,10 +5,12 @@ from pydantic import BaseModel, Field
 
 
 class NotiOwner(BaseModel):
+    id: int
     telegram_id: Annotated[str, Field(max_length=12)]
 
 
 class Contact(BaseModel):
+    id: int
     title: Annotated[str, Field(max_length=40)]
     phone: Optional[Annotated[str, Field(max_length=20)]]
     telegram_id: Optional[Annotated[str, Field(max_length=12)]]
@@ -16,10 +18,12 @@ class Contact(BaseModel):
 
 
 class NotiType(BaseModel):
+    id: int
     title: Annotated[str, Field(max_length=20)]
 
 
 class Notification(BaseModel):
+    id: int
     title: Annotated[str, Field(max_length=100)]
     owner: NotiOwner
     noti_type: NotiType
