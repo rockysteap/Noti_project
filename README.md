@@ -6,7 +6,7 @@ Noti is a tool for creating notifications written in Python using aiogram and as
 ### Ru
 Ноти - инструмент для создания уведомлений, написанный на Python с использованием aiogram и asyncio, а также Telegram бота в качестве фронтенда и фреймворка Django Rest в качестве бекэнда.
 
-### todo
+### done
 1. create hierarchy
 	Noti_proj -
 	-	-> backend/src/noti/...
@@ -17,3 +17,5 @@ Noti is a tool for creating notifications written in Python using aiogram and as
 2. connect bot and backend by api with JWT auth
 3. send telegram id to DRF and save in db
 
+### todo
+4. prepare main notification types and exchange them with db on start command
