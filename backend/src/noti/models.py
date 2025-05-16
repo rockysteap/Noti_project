@@ -6,6 +6,7 @@ class NotiOwner(models.Model):
 
 
 class Contact(models.Model):
+    owner = models.ForeignKey(NotiOwner, on_delete=models.CASCADE)
     title = models.CharField(max_length=40)
     phone = models.CharField(max_length=20, default=None)
     telegram_id = models.CharField(max_length=12, default=None)
@@ -17,8 +18,8 @@ class NotiType(models.Model):
 
 
 class Notification(models.Model):
-    title = models.CharField(max_length=100)
     owner = models.ForeignKey(NotiOwner, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
     noti_type = models.ForeignKey(NotiType, on_delete=models.CASCADE)
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
     time = models.TimeField(null=True)
